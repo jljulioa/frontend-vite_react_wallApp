@@ -14,9 +14,13 @@ spec:
     spec:
       containers:
       - name: vite-app
-        image: CONTAINER_IMAGE
+        image: 125137910162.dkr.ecr.us-east-1.amazonaws.com/vite-app:vite-app-4
         ports:
-        - containerPort: 5173
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
 
 ---
 
@@ -31,6 +35,7 @@ spec:
   selector:
     app: vite-app
   ports:
-  - port: 5173
-    targetPort: 5173
+  - port: 80
+    protocol: TCP
+    targetPort: 80
     nodePort: 30001

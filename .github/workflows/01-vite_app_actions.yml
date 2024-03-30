@@ -8,7 +8,7 @@ env:
   AWS-REGION: us-east-1
   EKS-CLUSTER-NAME: eksdemo1
   REPOSITORY_URI: ${{secrets.REPOSITORY_URI}}
-  IMAGE_TAG: ${{ github.run_number }}
+  IMAGE_TAG: 1.0.${{ github.run_number }}
 
 permissions:
   id-token: write
