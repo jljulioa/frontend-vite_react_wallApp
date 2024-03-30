@@ -55,8 +55,8 @@ export default function Dashboard() {
             <div className="p-5 sm:p-8 ">     
                 <div className={`w-full columns-1 gap-5 sm:gap-8 ${wall.length >= 2 ? 'sm:columns-2': ''} ${wall.length >= 3 ? 'md:columns-3': ''}  ${wall.length > 7 ? 'lg:columns-4': ''} [&>img:not(:first-child)]:mt-8`} id={``}>
                     {wall.map((key, i) => 
-                    <a className="relative ring-1 ring-[#7d17bc] group grid max-w-lg w-auto max-h-sm overflow-hidden rounded mb-5" href={key.uploadSignedUrl} key={i} target="_blank" rel="noreferrer">
-                        <img className=" w-full h-auto hover:scale-105 transition duration-200" loading="lazy" key={i} src={key.thumabnailSignedUrl}/>
+                    <a className={`relative ring-1 ring-[#7d17bc] group grid max-w-lg aspect-${key.ar} max-h-sm overflow-hidden rounded mb-5`} href={key.uploadSignedUrl} key={i} target="_blank" rel="noreferrer">
+                        <img className={`w-full hover:scale-105 transition duration-200 aspect-${key.ar}`} loading="lazy" key={i} src={key.thumabnailSignedUrl}/>
                         <button onClick={(e) => {e.preventDefault(); handleDelete(key.key)}} className="absolute right-5 top-5 p-1 bg-red-500 rounded text-lg hidden group-hover:block">
                             <img className="w-6" src="./src/assets/trash.svg" alt="delete" />
                         </button>

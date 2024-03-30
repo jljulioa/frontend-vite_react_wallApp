@@ -20,7 +20,7 @@ export default function Homepage() {
                     <div className="color"><span>E76F51</span></div>
                 </div>
             </div> */}
-            <div className="wellcome text-[13rem]">Wellcome</div>
+            <div className="wellcome text-7xl md:text-[13rem]">Wellcome</div>
         </div>
     )
 }

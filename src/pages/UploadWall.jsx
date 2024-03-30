@@ -76,7 +76,7 @@ export default function UploadWall() {
             {popUP &&
             <span className="absolute top-40 animate-bounce duration-300 text-3xl">Succsesfully Upload</span>
             }
-            {error && <span className="absolute top-40 animate-bounce duration-300 text-3xl">{error}</span>}
+            {error && <span className="absolute top-40 animate-bounce duration-300 text-3xl text-red-500">{error}</span>}
             <h1 className="text-5xl font-bold mb-12 text-center page-title">Upload Wallpaper</h1>
             <div className="flex flex-col rounded-lg py-10 md:px-16 items-center justify-center md:shadow-2xl md:bg-[#621c93] md:ring-1 md:ring-[#7d17bc] md:shadow-[#7d17bc]">
                 <Label
