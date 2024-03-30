@@ -7,7 +7,7 @@ on:
 env:
   AWS-REGION: us-east-1
   EKS-CLUSTER-NAME: eksdemo1
-  REPOSITORY_URI: ${{secrets.env.REPOSITORY_URI}}
+  REPOSITORY_URI: ${{secrets.REPOSITORY_URI}}
   IMAGE_TAG: ${{ github.run_number }}
 
 permissions:
