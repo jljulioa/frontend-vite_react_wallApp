@@ -2,9 +2,7 @@ name: CI/CD for Vite App
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 env:
   AWS-REGION: us-east-1
