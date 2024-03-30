@@ -37,5 +37,4 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         run: |
           docker build -t $REPOSITORY_URI:vite-app-$IMAGE_TAG .
-          docker tag $REPOSITORY_URI:vite-app-$IMAGE_TAG $REPOSITORY_URI:vite-app
-          docker push $REPOSITORY_URI:vite-app
+          docker push $REPOSITORY_URI:vite-app-$IMAGE_TAG
