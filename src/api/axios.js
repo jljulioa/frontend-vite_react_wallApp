@@ -1,7 +1,8 @@
 import axios from "axios";
-import { Api } from "kubernetes-client";
+import k8s from "@kubernetes/client-node";
 
-const api = new Api({apiVersion: 'v1'});
+
+const api = new k8s.CoreV1Api()
 
 const service = await api.v1.namespaces('default').services('express-backend-service').get();
 

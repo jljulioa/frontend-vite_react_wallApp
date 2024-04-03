@@ -12,12 +12,12 @@
   "dependencies": {
     "@fontsource-variable/jost": "^5.0.18",
     "@fontsource/calligraffitti": "^5.0.8",
+    "@kubernetes/client-node": "^0.20.0",
     "@midudev/tailwind-animations": "^0.0.7",
     "axios": "^1.6.8",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.3",
     "js-cookie": "^3.0.5",
-    "kubernetes-client": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
