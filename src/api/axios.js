@@ -1,8 +1,9 @@
 import axios from "axios";
 
 
+
 const axiosInstance = axios.create({
-    baseURL: 'http://10.100.155.151:8080/api',
+    baseURL: 'http://express-backend-service.default.svc.cluster.local:8080/api',
     withCredentials: true
 })
 
