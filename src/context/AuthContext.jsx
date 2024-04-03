@@ -3,6 +3,8 @@ import { registerRequest, loginRequest, veryfyTokenRequest, logoutRequest } from
 import PropTypes from 'prop-types'; 
 import Cookies from "js-cookie";
 import { profileUpload } from "../api/api.wall";
+import { k8s } from "@kubernetes/client-node";
+
 
 const AuthContext = createContext();
 
@@ -20,6 +22,7 @@ export const AuthProvider = ({children}) => {
     const [error, setError] = useState([]);
     const [loading, setLoading] = useState(true);
     const [editprofile, setEditProfile] = useState(null);
+    const [service, setService] = useState(null);
 
     const signin = async (data) => {
         try {
@@ -78,6 +81,29 @@ export const AuthProvider = ({children}) => {
     }, [error])
 
     useEffect(() => {
+        const fetchServiceIP = async () => {
+            try {
+                const kc = new k8s.KubeConfig();
+                kc.loadFromDefault();
+        
+                const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
+        
+                const serviceData = await k8sApi.readNamespacedService('express-backend-service', 'default');
+                const apiIp = serviceData.body.spec.clusterIP;
+
+                console.log(apiIp)
+        
+                setService(apiIp);
+            } catch (error) {
+                console.error("Error retrieving service details:", error);
+                throw error; // Throw the error to indicate failure
+            }
+        };
+
+        fetchServiceIP();
+    }, []);
+
+    useEffect(() => {
 
         const cookies = Cookies.get()
 
@@ -115,7 +141,8 @@ export const AuthProvider = ({children}) => {
             loading,
             user,
             isAuth,
-            error
+            error,
+            service
         }}>
             {children}
         </AuthContext.Provider>
