@@ -1,5 +1,5 @@
 import axios from "axios";
-import k8s from "@kubernetes/client-node";
+import {k8s} from "@kubernetes/client-node";
 
 
 const kc = new k8s.KubeConfig();
