@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: `http://express-backend-service.default.svc.cluster.local:8080/api`,
+    baseURL: `http://express-backend-balancer-43295231.us-east-1.elb.amazonaws.com/api`,
     withCredentials: true
 })
 
