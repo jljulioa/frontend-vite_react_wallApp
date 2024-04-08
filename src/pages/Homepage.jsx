@@ -1,6 +1,12 @@
+import { useEffect } from "react"
+import { helloServer } from "../api/api.auth"
 export default function Homepage() {
     console.log(import.meta.env.VITE_API_URL)
     console.log(import.meta.env)
+
+    useEffect(() => {
+       helloServer().then((res) => console.log(res))
+    }, [])
     return (
         <div className=" w-full my-32 flex flex-col justify-center items-center text-slate-200 App">
             {/* <div className="btn rounded-xl" type="button">

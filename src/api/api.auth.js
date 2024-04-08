@@ -17,3 +17,7 @@ export const veryfyTokenRequest = () => {
 export const logoutRequest = () => {
     return axios.post(`auth/logout`)
 }
+
+export const helloServer = () => {
+    return axios.get(`auth/`)
+}
