@@ -6,20 +6,14 @@ ENV TZ=America/Bogota
 
 WORKDIR /app
 
-COPY . /app
+COPY package.json .
 
 RUN npm install
 
+COPY . .
+
 RUN npm run build
 
-FROM ubuntu
+EXPOSE 8086
 
-RUN apt-get update
-
-RUN apt-get install nginx -y
-
-COPY --from=build /app/dist /var/www/html/
-
-EXPOSE 80
-
-CMD ["nginx","-g","daemon off;"]
+CMD ["npm", "run", "preview"]

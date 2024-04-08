@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: vite-app
-        image: 125137910162.dkr.ecr.us-east-1.amazonaws.com/vite-app:vite-app-1.0.33
+        image: 125137910162.dkr.ecr.us-east-1.amazonaws.com/vite-app:vite-app-1.0.36
         ports:
-        - containerPort: 5173
+        - containerPort: 8086
           name: vite-app
         env:
         - name: VITE_API_URL
@@ -41,7 +41,7 @@ spec:
   selector:
     app: vite-app
   ports:
-  - port: 5173
+  - port: 8086
     protocol: TCP
-    targetPort: 5173
+    targetPort: 8086
     nodePort: 31444
