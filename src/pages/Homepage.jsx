@@ -1,4 +1,6 @@
 export default function Homepage() {
+    console.log(import.meta.env.VITE_API_URL)
+    console.log(import.meta.env)
     return (
         <div className=" w-full my-32 flex flex-col justify-center items-center text-slate-200 App">
             {/* <div className="btn rounded-xl" type="button">
