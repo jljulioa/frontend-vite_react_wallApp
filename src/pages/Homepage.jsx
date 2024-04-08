@@ -7,6 +7,10 @@ export default function Homepage() {
     useEffect(() => {
        helloServer().then((res) => console.log(res))
     }, [])
+
+    useEffect(() => {
+        fetch('http://express-backend-service.default.svc.cluster.local/api/auth').then((res) => console.log(res))
+    })
     return (
         <div className=" w-full my-32 flex flex-col justify-center items-center text-slate-200 App">
             {/* <div className="btn rounded-xl" type="button">
