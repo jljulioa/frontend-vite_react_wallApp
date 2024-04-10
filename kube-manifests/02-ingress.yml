@@ -13,4 +13,4 @@ spec:
     service:
       name: vite-app-service
       port:
-        number: 5173
+        number: 80

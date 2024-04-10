@@ -5,7 +5,7 @@ metadata:
   labels:
     app: vite-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: vite-app
@@ -18,7 +18,7 @@ spec:
       - name: vite-app
         image: 125137910162.dkr.ecr.us-east-1.amazonaws.com/vite-app:vite-app-1.0.36
         ports:
-        - containerPort: 8086
+        - containerPort: 8080
           name: vite-app
         env:
         - name: VITE_API_URL
@@ -41,7 +41,7 @@ spec:
   selector:
     app: vite-app
   ports:
-  - port: 8086
+  - port: 3035
     protocol: TCP
-    targetPort: 8086
+    targetPort: 8080
     nodePort: 31444

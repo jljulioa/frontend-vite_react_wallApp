@@ -6,13 +6,13 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   preview: {
-    port: 8086,
+    port: 8080,
     strictPort: true
   },
   server: {
-    port: 8086,
+    port: 8080,
     strictPort: true,
     host: '0.0.0.0',
-    origin: 'http://0.0.0.0:8086',
+    origin: 'http://0.0.0.0:8080',
   }
 })
