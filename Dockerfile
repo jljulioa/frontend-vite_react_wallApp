@@ -1,4 +1,4 @@
-FROM node:21.7.1-alpine as build
+FROM node:alpine 
 
 RUN apk tzdata update && apk add --no-cache tzdata
 
@@ -12,6 +12,8 @@ RUN npm install
 
 COPY . .
 
+RUN npm run build
+
 EXPOSE 8080
 
-CMD [ "npm", "run", "dev" ]
+CMD ["npm", "run", "preview"]

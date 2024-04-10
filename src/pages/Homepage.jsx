@@ -9,7 +9,7 @@ export default function Homepage() {
     }, [])
 
     useEffect(() => {
-        fetch('http://express-backend-service.default.svc.cluster.local/api/auth').then((res) => console.log(res))
+        fetch('http://54.211.21.161:32345/api/auth').then((res) => console.log(res))
     })
     return (
         <div className=" w-full my-32 flex flex-col justify-center items-center text-slate-200 App">

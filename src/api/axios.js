@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://express-backend-service:80/api/',
+    baseURL: ':32345/api/',
     withCredentials: true
 })
 
