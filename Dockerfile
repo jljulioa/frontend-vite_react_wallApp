@@ -14,8 +14,6 @@ COPY . .
 
 RUN npm run build
 
-RUN echo "search cluster.local" > /etc/resolv.conf
-
 EXPOSE 8080
 
 CMD ["npm", "run", "preview"]
