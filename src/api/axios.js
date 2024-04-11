@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://54.204.67.62:31321/api/',
+    baseURL: 'http://express-alb-1156644359.us-east-1.elb.amazonaws.com/api/',
     withCredentials: true,
 })
 
