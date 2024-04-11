@@ -2,11 +2,8 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://54.211.21.161:32345/api/',
+    baseURL: 'http://express-backend-service.default.svc.cluster.local/api/',
     withCredentials: true,
-    headers: {
-        'acess-control-allow-origin': '*'
-    }
 })
 
 
