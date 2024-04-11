@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://express-backend-service.default.svc.cluster.local/api/',
+    baseURL: 'http://54.204.67.62:31321/api/',
     withCredentials: true,
 })
 
